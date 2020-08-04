@@ -37,7 +37,7 @@ jobs:
     docker: *docker
     steps:
       - attach_workspace:
-          at: /root
+          at: ~/
       - run:
           command: |
             FILES=$(circleci tests glob "dist/**/*.test.[jt]{s,}" | circleci tests split --split-by=timings)
