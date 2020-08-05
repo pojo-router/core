@@ -3,11 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## 0.2.0 (2020-08-04)
-* Add testing
-### BREAKING CHANGE
-* Removed useBestMatch
-
 ## 0.1.0 (2020-07-25)
 
 * fix: Fix build things (#5) ([3b7e7a5](https://github.com/notwillk/pojo-router/commit/3b7e7a5)), closes [#5](https://github.com/notwillk/pojo-router/issues/5)
@@ -19,4 +14,3 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### BREAKING CHANGE
 
 * CurrentPathContext is now just the currentPath string
-
