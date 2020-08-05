@@ -1,6 +1,6 @@
 {
   "name": "pojo-router",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A react hooks library to associate metadata to a path",
   "scripts": {
     "build:lib": "cross-env NODE_ENV=production babel src --root-mode upward --out-dir lib --source-maps inline --extensions '.ts,.tsx,.js' --ignore '**/__tests__/**' --ignore '**/*.d.ts'",
@@ -41,6 +41,10 @@
     "README.md"
   ],
   "devDependencies": {
+    "@testing-library/react-hooks": "3.4.1",
+    "@types/lodash.isstring": "4.0.6",
+    "lerna": "3.22.1",
+    "react-test-renderer": "16.8.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.21.0",
     "rollup-plugin-babel": "^4.4.0",
@@ -53,8 +57,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.10.5",
-    "@types/lodash": "^4.14.158",
-    "lerna": "^3.22.1",
     "lodash.isstring": "^4.0.1",
     "path-to-regexp": "^6.1.0"
   },
