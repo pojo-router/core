@@ -26,7 +26,7 @@ const routes = [
 const notFound = { nothing: true };
 
 const Router = ({ children }) => (
-  <PojoRouter namedPaths={namedPaths} routes={routes} notFound={notFound} currentPath='page2'>
+  <PojoRouter namedPaths={namedPaths} routes={routes} notFound={notFound} currentPath='/page2'>
     { children }
   </PojoRouter>
 );
