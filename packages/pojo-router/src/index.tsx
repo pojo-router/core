@@ -33,7 +33,7 @@ type NamedPath = {
   [k: string]: any;
 };
 type Route = readonly [string, AnyIfEmpty<DefaultRoutePojo>];
-type Props = {
+export type PojoRouterProps = {
   children: React.ReactChild;
   namedPaths: Record<string, string | NamedPath>;
   routes: readonly Route[];
@@ -47,7 +47,7 @@ const PojoRouter = ({
   routes,
   notFound,
   currentPath,
-}: Props) => {
+}: PojoRouterProps) => {
   const [cachedMatches, setCachedMatches] = useState({});
 
   const normalizedRouter = useMemo(
@@ -57,7 +57,7 @@ const PojoRouter = ({
           pathOrPathName in namedPaths
             ? namedPaths[pathOrPathName]
             : pathOrPathName;
-        // TODO: lodash isString doesn't type correctly
+
         const { path, ...options } = isString(pathObjectOrString)
           ? { path: pathObjectOrString as string }
           : (pathObjectOrString as NamedPath);
@@ -104,8 +104,8 @@ const PojoRouter = ({
       );
 
       const matches = allMatches.length === 0 ? [notFound] : allMatches;
-      setCachedMatches((existingCachedMacthes) => ({
-        ...existingCachedMacthes,
+      setCachedMatches((existingCachedMatches) => ({
+        ...existingCachedMatches,
         [pathToMatch]: matches,
       }));
 
@@ -136,15 +136,6 @@ export const useMatches = (pathToMatch: string) => {
 
 export const useFirstMatch = (pathToMatch: string) =>
   useMatches(pathToMatch)[0];
-
-export const useBestMatch = (
-  pathToMatch: string,
-  matchComparator: (s1: string, s2: string) => number,
-) => {
-  const allMatches = useMatches(pathToMatch);
-  allMatches.sort(matchComparator);
-  return allMatches[0];
-};
 
 export const useCurrentMatch = () => useFirstMatch(useCurrentPath());
 

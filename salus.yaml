@@ -2,10 +2,6 @@ scanner_configs:
   YarnAudit:
     exclude_groups:
     - devDependencies         # dev only dependencies
-    exceptions:
-      - advisory_id: 1213
-        changed_by: melissazhang
-        notes: This vulnerability is only present in dependencies of our dev dependencies (i.e. lerna) so not exposed to attackers.
 enforced_scanners:
   - RepoNotEmpty
   - NPMAudit
