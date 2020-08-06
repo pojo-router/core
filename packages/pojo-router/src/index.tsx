@@ -33,7 +33,7 @@ type NamedPath = {
   [k: string]: any;
 };
 type Route = readonly [string, AnyIfEmpty<DefaultRoutePojo>];
-export type Props = {
+export type PojoRouterProps = {
   children: React.ReactChild;
   namedPaths: Record<string, string | NamedPath>;
   routes: readonly Route[];
@@ -47,7 +47,7 @@ const PojoRouter = ({
   routes,
   notFound,
   currentPath,
-}: Props) => {
+}: PojoRouterProps) => {
   const [cachedMatches, setCachedMatches] = useState({});
 
   const normalizedRouter = useMemo(

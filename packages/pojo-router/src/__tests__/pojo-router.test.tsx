@@ -3,7 +3,7 @@ import React from 'react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import PojoRouter, {
-  Props,
+  PojoRouterProps,
   useCurrentPath,
   useCurrentMatch,
   useMatches,
@@ -12,7 +12,7 @@ import PojoRouter, {
 
 describe('PojoRouter', () => {
   let createWrapper: (
-    props: Omit<Props, 'children'>,
+    props: Omit<PojoRouterProps, 'children'>,
   ) => ({ children }: { children: React.ReactChild }) => React.ReactElement;
   const namedPaths = {
     page1: '/page1',
@@ -29,7 +29,7 @@ describe('PojoRouter', () => {
   const notFound = { nothing: true };
 
   beforeEach(() => {
-    createWrapper = (props: Omit<Props, 'children'>) => ({
+    createWrapper = (props: Omit<PojoRouterProps, 'children'>) => ({
       children,
     }: {
       children: React.ReactChild;
@@ -103,7 +103,7 @@ describe('PojoRouter', () => {
       page2: { path: '/page2', sensitive: true },
       page3: { path: '/page3/:id' },
     };
-    const wrapper = (props: Props) => {
+    const wrapper = (props: PojoRouterProps) => {
       return <PojoRouter {...props} />;
     };
 
@@ -116,7 +116,7 @@ describe('PojoRouter', () => {
         routes,
         currentPath: '/page1',
         notFound,
-      } as Omit<Props, 'children'>,
+      } as Omit<PojoRouterProps, 'children'>,
     });
 
     expect(result.current).toEqual([{ abc: 456 }]);
