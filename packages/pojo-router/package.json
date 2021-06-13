@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/notwillk/pojo-router.git"
+    "url": "https://github.com/pojo-router/core.git"
   },
   "bugs": {
-    "url": "https://github.com/notwillk/pojo-router/issues"
+    "url": "https://github.com/pojo-router/core/issues"
   },
-  "homepage": "https://github.com/notwillk/pojo-router#readme",
+  "homepage": "https://github.com/pojo-router/core/#readme",
   "author": "William Klancnik",
   "license": "MIT",
   "keywords": [
